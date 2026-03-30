@@ -9,6 +9,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 动态渐变背景 -->
+    <div class="animated-bg"></div>
+    
+    <!-- 网格背景 -->
+    <div class="grid-overlay"></div>
+    
+    <!-- 扫描线效果 -->
+    <div class="scanlines"></div>
+    
+    <!-- 矩阵代码雨画布 -->
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- 粒子画布 -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- 前景粒子 -->
+    <canvas id="particle-canvas"></canvas>
+    
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="container">
@@ -36,7 +54,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>专业计算机毕业设计<br><span class="highlight">一对一全程服务</span></h1>
+                <h1><span class="glitch-text" data-text="专业计算机毕业设计">专业计算机毕业设计</span><br><span class="highlight">一对一全程服务</span></h1>
                 <p class="hero-subtitle">涵盖网站开发、APP开发、小程序、算法设计、数据分析等多个方向<br>资深技术团队，品质保障，售后无忧</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">立即咨询</a>
@@ -44,20 +62,40 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <span class="stat-number">500+</span>
-                        <span class="stat-label">成功案例</span>
+                        <div class="stat-front">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">成功案例</span>
+                        </div>
+                        <div class="stat-back">
+                            <span class="stat-label">品质保证</span>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">98%</span>
-                        <span class="stat-label">通过率</span>
+                        <div class="stat-front">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">通过率</span>
+                        </div>
+                        <div class="stat-back">
+                            <span class="stat-label">专业团队</span>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">3年+</span>
-                        <span class="stat-label">服务经验</span>
+                        <div class="stat-front">
+                            <span class="stat-number">3年+</span>
+                            <span class="stat-label">服务经验</span>
+                        </div>
+                        <div class="stat-back">
+                            <span class="stat-label">经验丰富</span>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">24h</span>
-                        <span class="stat-label">响应速度</span>
+                        <div class="stat-front">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">响应速度</span>
+                        </div>
+                        <div class="stat-back">
+                            <span class="stat-label">快速响应</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +107,8 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>服务项目</h2>
+                <h2 class="glitch-text" data-text="服务项目">服务项目</h2>
+                <div class="cyber-line"></div>
                 <p>全方位满足计算机相关专业毕业设计需求</p>
             </div>
             <div class="services-grid">
@@ -340,27 +379,7 @@
                     </ul>
                     <a href="#contact" class="btn btn-outline">选择此方案</a>
                 </div>
-                <div class="pricing-card">
-                    <div class="pricing-header">
-                        <h3>定制版</h3>
-                        <div class="pricing-price">
-                            <span class="currency">¥</span>
-                            <span class="amount">面议</span>
-                        </div>
-                        <p class="pricing-desc">特殊需求一对一报价</p>
-                    </div>
-                    <ul class="pricing-features">
-                        <li>✅ 算法类复杂项目</li>
-                        <li>✅ 大型系统架构</li>
-                        <li>✅ 多平台联动开发</li>
-                        <li>✅ 硬件+软件结合</li>
-                        <li>✅ 长期技术支持</li>
-                        <li>✅ 答辩PPT制作</li>
-                        <li>✅ 远程答辩指导</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-outline">联系咨询</a>
                 </div>
-            </div>
             <div class="pricing-note">
                 <p>💡 具体价格根据项目复杂度、技术难度、交付时间等因素确定，欢迎咨询获取详细报价</p>
             </div>
@@ -470,11 +489,9 @@
                         <div class="contact-detail">
                             <h3>微信咨询</h3>
                             <p>扫码添加微信，快速沟通需求</p>
-                            <div class="wechat-qr">
-                                <div class="qr-placeholder">
-                                    <span>微信二维码</span>
-                                    <small>请替换为您的微信二维码</small>
-                                </div>
+                            <div class="wechat-info">
+                                <p class="wechat-id">微信号：395621704</p>
+                                <p class="wechat-hint">添加时请备注"毕设咨询"</p>
                             </div>
                         </div>
                     </div>
@@ -483,7 +500,7 @@
                         <div class="contact-detail">
                             <h3>邮箱联系</h3>
                             <p>发送需求到邮箱，24小时内回复</p>
-                            <a href="mailto:your-email@example.com" class="contact-link">your-email@example.com</a>
+                            <a href="mailto:395621704@qq.com" class="contact-link">395621704@qq.com</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -550,8 +567,8 @@
                 </div>
                 <div class="footer-contact">
                     <h4>联系方式</h4>
-                    <p>微信：请添加微信咨询</p>
-                    <p>邮箱：your-email@example.com</p>
+                    <p>微信：395621704</p>
+                    <p>邮箱：395621704@qq.com</p>
                     <p>工作时间：9:00 - 23:00</p>
                 </div>
             </div>
